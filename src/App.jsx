@@ -4,13 +4,14 @@ import { v4 as uuid } from "uuid";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "nada" }]);
+  const [task, setTask] = useState("");
 
   function writingTask(e) {
-    setList([{ id: uuid(), task: e.target.value }]);
+    setTask(e.target.value);
   }
 
   function addTask() {
-    console.log("working button");
+    setList([...list, { id: uuid(), task }]);
   }
 
   return (
