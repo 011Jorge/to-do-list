@@ -7,6 +7,7 @@ export default createGlobalStyle`
         margin: 0;
         outline: none;
         box-sizing: border-box;
+        font-family: Roboto, sans-serif;
     }
 
 `;

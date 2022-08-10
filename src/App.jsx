@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { v4 as uuid } from "uuid";
-import { Container } from "./styles";
+import { Container, ContainerItems, Input, Button } from "./styles";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "nada" }]);
@@ -17,13 +17,15 @@ function App() {
 
   return (
     <Container>
-      <input onChange={writingTask} placeholder="O que tenho para fazer" />
-      <button onClick={addTask}>Adicionar</button>
-      <ul>
-        {list.map((item) => (
-          <li key={item.id}>{item.task}</li>
-        ))}
-      </ul>
+      <ContainerItems>
+        <Input onChange={writingTask} placeholder="O que tenho para fazer" />
+        <Button onClick={addTask}>Adicionar</Button>
+        <ul>
+          {list.map((item) => (
+            <li key={item.id}>{item.task}</li>
+          ))}
+        </ul>
+      </ContainerItems>
     </Container>
   );
 }
