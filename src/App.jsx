@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { v4 as uuid } from "uuid";
+import { FaTrashAlt, FaRegCheckSquare } from "react-icons/fa";
+
 import { Container, ContainerItems, Input, Button } from "./styles";
 
 function App() {
@@ -22,7 +24,11 @@ function App() {
         <Button onClick={addTask}>Adicionar</Button>
         <ul>
           {list.map((item) => (
-            <li key={item.id}>{item.task}</li>
+            <>
+              <FaRegCheckSquare />
+              <li key={item.id}>{item.task}</li>
+              <FaTrashAlt />
+            </>
           ))}
         </ul>
       </ContainerItems>
