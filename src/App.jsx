@@ -6,7 +6,9 @@ import { FaTrashAlt, FaRegCheckSquare } from "react-icons/fa";
 import { Container, ContainerItems, Input, Button, ListItems } from "./styles";
 
 function App() {
-  const [list, setList] = useState([{ id: uuid(), task: "nada" }]);
+  const [list, setList] = useState([
+    { id: uuid(), task: "nada", finished: true },
+  ]);
   const [task, setTask] = useState("");
 
   function writingTask(e) {
@@ -14,7 +16,15 @@ function App() {
   }
 
   function addTask() {
-    setList([...list, { id: uuid(), task }]);
+    setList([...list, { id: uuid(), task, finished: false }]);
+  }
+
+  function finishTask(id) {
+    const newList = list.map((item) =>
+      item.id === id ? { ...item, finished: !item.finished } : item
+    );
+
+    setList(newList);
   }
 
   return (
@@ -24,9 +34,9 @@ function App() {
         <Button onClick={addTask}>Adicionar</Button>
         <ul>
           {list.map((item) => (
-            <ListItems>
-              <FaRegCheckSquare />
-              <li key={item.id}>{item.task}</li>
+            <ListItems isFinished={item.finished} key={item.id}>
+              <FaRegCheckSquare onClick={() => finishTask(item.id)} />
+              <li>{item.task}</li>
               <FaTrashAlt />
             </ListItems>
           ))}

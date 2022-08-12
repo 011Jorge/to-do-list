@@ -53,7 +53,7 @@ export const ListItems = styled.div`
 
   width: 500px;
   height: 60px;
-  background: #e4e4e4;
+  background: ${(props) => (props.isFinished ? "#E8FF8B" : "#E4E4E4")};
   box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-bottom: 30px;
