@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { FaTrashAlt, FaRegCheckSquare } from "react-icons/fa";
 
-import { Container, ContainerItems, Input, Button } from "./styles";
+import { Container, ContainerItems, Input, Button, ListItems } from "./styles";
 
 function App() {
   const [list, setList] = useState([{ id: uuid(), task: "nada" }]);
@@ -24,11 +24,11 @@ function App() {
         <Button onClick={addTask}>Adicionar</Button>
         <ul>
           {list.map((item) => (
-            <>
+            <ListItems>
               <FaRegCheckSquare />
               <li key={item.id}>{item.task}</li>
               <FaTrashAlt />
-            </>
+            </ListItems>
           ))}
         </ul>
       </ContainerItems>
