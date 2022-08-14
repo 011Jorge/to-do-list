@@ -59,8 +59,13 @@ function App() {
         <h1>TO DO LIST</h1>
       </Header>
       <ContainerItems>
-        <Input onChange={writingTask} placeholder="O que tenho para fazer..." />
-        <Button onClick={() => addTask("task", task)}>Adicionar</Button>
+        <div>
+          <Input
+            onChange={writingTask}
+            placeholder="O que tenho para fazer..."
+          />
+          <Button onClick={() => addTask("task", task)}>Adicionar</Button>
+        </div>
         <ul>
           {list.length > 0 ? (
             list.map((item) => (
