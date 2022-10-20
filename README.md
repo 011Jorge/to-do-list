@@ -30,7 +30,7 @@ git clone https://github.com/011Jorge/to-do-list
 
 ## ☕ Usando o To-Do-List
 
-Para usar o To-Do-List, siga estas etapas:
+Para usar o projeto, siga estas etapas:
 
 Para atualizar os pacotes e dependências:
 ```
